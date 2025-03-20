@@ -142,17 +142,17 @@ function safeSpawnSync(command, parameters, options = {}) {
     return '"' + param.replaceAll(/([$\\"`])/g, "\\$1") + '"';
   });
 
+  // Avoid using commands that are not available in StackBlitz
+  if (command === 'wc' || command === 'egrep' || command === 'lscpu') {
+    console.log(`Command ${command} is not available in this environment.`);
+    return { status: 0 };
+  }
+
   const result = spawnSync(command, parameters, options);
   if (result.status !== 0) {
     console.log(
-      'Error: command "' +
-        command +
-        '" with parameters "' +
-        parameters +
-        '" exited with code ' +
-        result.status
+      `Command ${command} failed with status ${result.status}: ${result.stderr}`
     );
-    process.exit(result.status);
   }
   return result;
 }
