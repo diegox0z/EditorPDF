@@ -1,0 +1,15 @@
+{
+  "name": "pdf-viewer-project",
+  "version": "1.0.0",
+  "description": "A simple PDF viewer app",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^2.16.105"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
