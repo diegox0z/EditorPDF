@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF Viewer and Text Extractor</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <nav class="menu">
       <div>
         <button id="open-pdf">Abrir PDF</button>
+        <button id="search-text">Buscar Texto</button>
+        <button id="anonymize-text">Anonimizar</button>
       </div>
     </nav>
     <div class="container">
       <iframe id="pdf-iframe" class="pdf-viewer"></iframe>
-      <textarea
-        id="extracted-text"
-        rows="10"
-        cols="50"
-        placeholder="Extracted text will appear here..."
-      ></textarea>
+      <div class="text-container">
+        <textarea
+          id="extracted-text"
+          rows="10"
+          cols="50"
+          placeholder="Extracted text will appear here..."
+        ></textarea>
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Texto a buscar..."
+            style="display: none"
+          />
+        </div>
+      </div>
     </div>
     <div id="message"></div>
     <input

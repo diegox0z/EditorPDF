@@ -7,9 +7,11 @@
     "start": "parcel src/index.html"
   },
   "dependencies": {
-    "pdfjs-dist": "^2.16.105"
+    "compromise": "^14.14.4",
+    "pdfjs-dist": "^3.11.174"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
     "parcel-bundler": "^1.12.5"
   }
 }
